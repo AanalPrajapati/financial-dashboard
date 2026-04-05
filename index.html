@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finance Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>💰 Finance</h2>
+    <p>Dashboard</p>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <h2>Dashboard</h2>
+      <select id="role">
+        <option value="viewer">Viewer</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+      <div class="card balance" id="balance">₹ 0</div>
+      <div class="card income" id="income">₹ 0</div>
+      <div class="card expense" id="expense">₹ 0</div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+      <canvas id="lineChart"></canvas>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+    <!-- Insights -->
+    <div class="insights" id="insights"></div>
+
+    <!-- Admin Form -->
+    <div id="form" class="form">
+      <input id="amount" placeholder="Amount">
+      <input id="category" placeholder="Category">
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <button onclick="addTransaction()">Add</button>
+    </div>
+
+    <!-- Search -->
+    <input id="search" placeholder="Search..." oninput="renderTable()">
+
+    <!-- Table -->
+    <table id="table"></table>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
